@@ -4,7 +4,7 @@ import "testing"
 
 func TestHello(t *testing.T) {
 
-	checkMessage := func(t *testing.T, result, expect string) {
+	checkMessage := func(t *testing.T, result string, expect string) {
 		t.Helper()
 		if result != expect {
 			t.Errorf("Result '%s', expected '%s'", result, expect)
