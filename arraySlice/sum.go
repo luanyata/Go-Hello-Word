@@ -11,14 +11,13 @@ func Sum(numbers []int) int {
 }
 
 // SumAll Soma os valores dos slice e retorna um novo slice
-func SumAll(numbersAll ...[]int) (sum []int) {
+func SumAll(numbersAll ...[]int) []int {
 
-	qtdNumber := len(numbersAll)
-	sum = make([]int, qtdNumber)
+	var sum []int
 
-	for i, number := range numbersAll {
-		sum[i] = Sum(number)
+	for _, number := range numbersAll {
+		sum = append(sum, Sum(number))
 	}
 
-	return
+	return sum
 }
