@@ -18,3 +18,5 @@
 * A linguagem já contem um mecanismo de benchmark. Em estrutura de interação `testing.B` fornece N que por sua vez é a quantidade de repeticoes que será executada. Não é preciso saber o valor de N e sim o valor retornado do teste apos execução do comando `go test -bench=.` (para Unix)
 * `Range` percorre o array e retorna cada valor com seu indice
 * Para saber a coberto de teste `go test --cover`
+* A função `len(SLICE)` retorna comprimento do slice
+* Função `make(TYPE, TAMANHO)` cria um slice passando o tipo e o tamanho inicial
