@@ -8,6 +8,7 @@ const prefixPtBr = "Olá "
 const prefixEs = "Hola "
 const prefixFr = "Bonjour "
 
+// Hello Imprime a saudacao de acordo do o idioma selecionado
 func Hello(name string, language string) string {
 	if name == "" {
 		name = "mundo"
