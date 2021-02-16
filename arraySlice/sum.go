@@ -21,3 +21,19 @@ func SumAll(numbersAll ...[]int) []int {
 
 	return sum
 }
+
+// SumAllRest Somta tudo meno o primeiro numero
+func SumAllRest(numbersSum ...[]int) []int {
+	var sums []int
+	for _, numbers := range numbersSum {
+
+		if len(numbers) == 0 {
+			sums = append(sums, 0)
+		} else {
+			finale := numbers[1:]
+			sums = append(sums, Sum(finale))
+		}
+	}
+
+	return sums
+}
