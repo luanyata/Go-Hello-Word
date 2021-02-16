@@ -11,7 +11,7 @@ func TestGeometry(t *testing.T) {
 		}
 	}
 
-	verifyArea := func(t *testing.T, form Form, expected float64) {
+	verifyArea := func(t *testing.T, name string, form Form, expected float64) {
 		t.Helper()
 		result := form.Area()
 
@@ -30,7 +30,7 @@ func TestGeometry(t *testing.T) {
 		rectangle := Rectangle{12.0, 6.0}
 		expected := 72.0
 
-		verifyArea(t, rectangle, expected)
+		verifyArea(t, "Teste Simples Retangulo", rectangle, expected)
 
 	})
 
@@ -38,23 +38,23 @@ func TestGeometry(t *testing.T) {
 		circle := Circle{10}
 		expected := 314.1592653589793
 
-		verifyArea(t, circle, expected)
+		verifyArea(t, "Teste Simples Circulo", circle, expected)
 	})
 
 	// Table Drive Tests: Uniao dos testes de Retangulo e Cirtculo acima
 	t.Run("Geometry Table Drive Tests", func(t *testing.T) {
 		testArea := []struct {
+			name     string
 			form     Form
 			expected float64
 		}{
-			{Rectangle{12, 6}, 72.0},
-			{Circle{10}, 314.1592653589793},
+			{name: "Retangulo", form: Rectangle{Width: 12, Height: 6}, expected: 72.0},
+			{name: "Circlo", form: Circle{Radius: 10}, expected: 314.1592653589793},
+			{name: "Triangulo", form: Triangle{Base: 12, Height: 6}, expected: 36.0},
 		}
 
 		for _, tt := range testArea {
-			result := tt.form.Area()
-
-			checkResult(t, result, tt.expected)
+			verifyArea(t, tt.name, tt.form, tt.expected)
 		}
 	})
 
