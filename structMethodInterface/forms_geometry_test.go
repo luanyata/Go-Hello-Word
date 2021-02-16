@@ -2,7 +2,7 @@ package structmethodinterface
 
 import "testing"
 
-func TestPerimeter(t *testing.T) {
+func TestGeometry(t *testing.T) {
 
 	checkResult := func(t *testing.T, result, expected float64) {
 		t.Helper()
@@ -39,6 +39,23 @@ func TestPerimeter(t *testing.T) {
 		expected := 314.1592653589793
 
 		verifyArea(t, circle, expected)
+	})
+
+	// Table Drive Tests: Uniao dos testes de Retangulo e Cirtculo acima
+	t.Run("Geometry Table Drive Tests", func(t *testing.T) {
+		testArea := []struct {
+			form     Form
+			expected float64
+		}{
+			{Rectangle{12, 6}, 72.0},
+			{Circle{10}, 314.1592653589793},
+		}
+
+		for _, tt := range testArea {
+			result := tt.form.Area()
+
+			checkResult(t, result, tt.expected)
+		}
 	})
 
 }
