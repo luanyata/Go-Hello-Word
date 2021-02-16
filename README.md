@@ -21,3 +21,5 @@
 * A função `len(SLICE)` retorna comprimento do slice
 * Função `make(TYPE, TAMANHO)` cria um slice passando o tipo e o tamanho inicial
 * Um slice pode ser fatiado, para pegar os valores de um determinado intervalo basta usar a sintaxr `[INDICE_INICIAL:INDICE_FINAL]`, caso o valor seja omitodo em um dos lados do `:` ele pega todos os valores
+* Para criar o que seria uma classe de tipo em `Ts` utilize a palavra reservada `struct` 
+* Diferente de outras linguagens em GO de um "objeto" satisfaça o contrato da interface de forma implicita o objeto é do tipo da interface
